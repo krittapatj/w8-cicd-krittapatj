@@ -15,3 +15,17 @@ test('uses a default name when no name is supplied', () => {
     'Hello, Cloud Student! CI/CD is working.'
   );
 });
+
+test('supports an empty string name', () => {
+  assert.equal(
+    createMessage(''),
+    'Hello, ! CI/CD is working.'
+  );
+});
+
+test('supports a Thai name', () => {
+  assert.equal(
+    createMessage('สมชาย'),
+    'Hello, สมชาย! CI/CD is working.'
+  );
+});
